@@ -1,20 +1,12 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"log"
-	"os"
-)
-
 func main() {
-	fmt.Printf("이름 입력 :")
-	in := bufio.NewReader(os.Stdin)
-	name, err := in.ReadString('\n')
+	// shadowing problem
+	// var float32 float32 = 9.1
+	// fmt.Print(float32)
+	// var number float32 = 9.2 -> float32가 변수명이라서 타입으로 사용할 수 없어 에러 발생
+	// fmt.Println(number)
 
-	if err != nil { // 에러가 있다면
-		log.Fatal(err) // 프로그램 종료
-	} else {
-		fmt.Println(name)
-	}
+	// var fmt float32 = 9.1
+	// fmt.Println(float32) -> 동일 문제
 }
