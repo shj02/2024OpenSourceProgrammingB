@@ -2,22 +2,20 @@ package main
 
 import (
 	"fmt"
-	"reflect"
 )
 
 func main() {
-	i := 13
-	var f float64 = 12.9 //f := 12.9
-	c1 := 'Z'
-	c2 := '김'
 
-	fmt.Printf("value i  : %d, value f : %f\n", i, f)
-	// fmt.Printf("%d * %f = %f", i, f, i*f) mismatched types int and float64 : 타입이 안 맞음
-	// fmt.Printf("%d * %f = %f\n", i, f, float64(i)*f) 타입 변환
-	fmt.Printf("%d * %f = %d\n", i, f, i*int(f))      // 타입 변환
-	fmt.Println(reflect.TypeOf(f), reflect.TypeOf(i)) // 원본 타입은 바뀌지 않음!
+	var f float64
+	var i int
+	var b bool
+	var s string
 
-	fmt.Println(c1, c2)                                 // 10진수 출력
-	fmt.Printf("%x\n", c2)                              // 유니코드 '김'에 대한 16진수 출력(http://home.unicode.org)
-	fmt.Println(reflect.TypeOf(c1), reflect.TypeOf(c2)) // 원본 타입은 바뀌지 않음!
+	fmt.Println(f, b, s, i) // 0 value(어떤 값을 할당하지 않았을 때의 값) => 0 false 공백 0
+	fmt.Printf("%f%t%s%d\n", f, b, s, i)
+
+	i = 3
+	f = 2.7
+	fmt.Print("\n\n", f > float64(i), "\n") // 2.7 > 3.0 -> false
+	fmt.Print(f <= float64(i))              // 2.7 <= 3.0 -> true
 }
