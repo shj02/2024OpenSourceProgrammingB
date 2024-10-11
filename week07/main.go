@@ -1,12 +1,27 @@
 package main
 
-func main() {
-	// shadowing problem
-	// var float32 float32 = 9.1
-	// fmt.Print(float32)
-	// var number float32 = 9.2 -> float32가 변수명이라서 타입으로 사용할 수 없어 에러 발생
-	// fmt.Println(number)
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
 
-	// var fmt float32 = 9.1
-	// fmt.Println(float32) -> 동일 문제
+func main() {
+	fmt.Printf("점수 입력 :")
+	in := bufio.NewReader(os.Stdin)
+	score, err := in.ReadString('\n')
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	score = strings.TrimSpace(score)              // TrimSpace() 공백, 띄어쓰기, 줄바꿈 제거(python의 strip과 유사)
+	realScore, _ := strconv.ParseFloat(score, 64) // 실수형 64비트 타입으로 형변환, := 선언 단축
+	if realScore >= 90 {
+		fmt.Println("A")
+	} else {
+		fmt.Println("BCDF")
+	}
 }
