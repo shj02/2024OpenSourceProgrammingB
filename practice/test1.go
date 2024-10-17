@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	//var i int
@@ -27,7 +29,7 @@ func main() {
 	fmt.Print("%d", i, "\n") //적용안됨!
 
 	fmt.Printf("i is ", i)
-	fmt.Printf(" 적용안됨!\n")
+	fmt.Printf(" 적용안됨! 10진수만 가능함!\n")
 	fmt.Printf("i is %d", i)
 
 	// 정리
