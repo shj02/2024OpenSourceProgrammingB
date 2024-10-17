@@ -8,5 +8,5 @@ func main() {
 	// fmt.Println(number)
 
 	// var fmt float32 = 9.1
-	// fmt.Println(float32)		같은 문제로 불가능
+	// fmt.Println(float32)		같은 문제로 불가능!!
 }
