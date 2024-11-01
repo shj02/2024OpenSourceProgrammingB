@@ -22,25 +22,22 @@ func main() {
 		fmt.Println(err)
 	}
 
-	// count := 0
-
-	var isPrime bool = true // int -> bool, count -> isPrime, 메모리가 적음
+	var isPrime bool = true
 	if n <= 1 {
-		// count = -1
-		isPrime = false // 가독성
+		isPrime = false
 	} else {
 		i := 2
 		for i < n {
 			if n%i == 0 {
-				// count = count + 1
-				isPrime = false // +연산 제거
+				isPrime = false
+				break // 1과 자기자신을 제외한 첫 번째 약수가 발견되면 반복문 종료
 			}
+			fmt.Printf("%d ", i) // 반복 횟수 확인용 코드
 			i++
 		}
 	}
 
-	// if count == 0
-	if isPrime { // 비교연산 제거
+	if isPrime {
 		fmt.Printf("%d는(은) 소수입니다", n)
 	} else {
 		fmt.Printf("%d는(은) 소수가 아닙니다", n)
