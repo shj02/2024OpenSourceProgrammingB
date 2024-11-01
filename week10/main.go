@@ -3,12 +3,14 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 	"strings"
 )
 
 func main() {
+	// fmt.Printf("%f\n", math.Sqrt(25.0))
 	fmt.Printf("정수 입력 :")
 	in := bufio.NewReader(os.Stdin)
 	number, err := in.ReadString('\n')
@@ -27,7 +29,8 @@ func main() {
 		isPrime = false
 	} else {
 		i := 2
-		for i < n {
+		// for i < n {
+		for i <= int(math.Sqrt(float64(n))) {
 			if n%i == 0 {
 				isPrime = false
 				break // 1과 자기자신을 제외한 첫 번째 약수가 발견되면 반복문 종료
