@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -24,21 +23,21 @@ func main() {
 	}
 
 	var isPrime bool = true
-	if n <= 1 { // 1 false
+	if n <= 1 {
 		isPrime = false
-	} else if n == 2 { // 2 true
+	} else if n == 2 {
 		isPrime = true
-	} else if n%2 == 0 { // 2를 제외한 모든 짝수는 소수가 아님
+	} else if n%2 == 0 {
 		isPrime = false
-	} else { // 2보다 큰 홀수
+	} else {
 		i := 3
-		for i <= int(math.Sqrt(float64(n))) {
+		// for i <= int(math.Sqrt(float64(n))) {
+		for i*i <= n {
 			if n%i == 0 {
 				isPrime = false
 				break
 			}
 			fmt.Printf("%d ", i)
-			// i++
 			i = i + 2
 		}
 	}
