@@ -8,6 +8,29 @@ import (
 	"strings"
 )
 
+func isPrime(n int) bool {
+	// var isPrime bool = true
+	if n <= 1 {
+		return false
+	} else if n == 2 {
+		return true
+	} else if n%2 == 0 {
+		return false
+	} else {
+		i := 3
+		for i*i <= n {
+			if n%i == 0 {
+				// isPrime = false
+				// break
+				return false
+			}
+			fmt.Printf("%d ", i)
+			i = i + 2
+		}
+	}
+	return true
+}
+
 func main() {
 	fmt.Printf("정수 입력 :")
 	in := bufio.NewReader(os.Stdin)
@@ -22,27 +45,7 @@ func main() {
 		fmt.Println(err)
 	}
 
-	var isPrime bool = true
-	if n <= 1 {
-		isPrime = false
-	} else if n == 2 {
-		isPrime = true
-	} else if n%2 == 0 {
-		isPrime = false
-	} else {
-		i := 3
-		// for i <= int(math.Sqrt(float64(n))) {
-		for i*i <= n {
-			if n%i == 0 {
-				isPrime = false
-				break
-			}
-			fmt.Printf("%d ", i)
-			i = i + 2
-		}
-	}
-
-	if isPrime {
+	if isPrime(n) {
 		fmt.Printf("%d는(은) 소수입니다", n)
 	} else {
 		fmt.Printf("%d는(은) 소수가 아닙니다", n)
