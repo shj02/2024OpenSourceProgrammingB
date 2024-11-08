@@ -2,7 +2,7 @@ package greeting
 
 import "fmt"
 
-// 소문자로 시직하는 함수는 외부 접근 불가
+// 소문자로 시작하는 함수는 외부 접근 불가
 // 단, 내부에서는 접근 가능
 func hi(name string) {
 	fmt.Printf("Hi %s!\n", name)
