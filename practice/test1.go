@@ -27,6 +27,7 @@ func main() {
 	fmt.Print("2") //12
 	fmt.Print("줄바꿈\n")
 	fmt.Print("%d", i, "\n") //적용안됨!
+	fmt.Print("i is ", i, "\n")
 
 	fmt.Printf("i is ", i)
 	fmt.Printf(" 적용안됨! 10진수만 가능함!\n")
@@ -35,5 +36,5 @@ func main() {
 	// 정리
 	// 줄바꿈 : Println
 	// %d 적용 : Printf
-	// "i is", i 적용 : Println
+	// "i is", i 적용 : Println, Print
 }
